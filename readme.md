@@ -52,4 +52,6 @@ Telegram：[@lgc2333](https://t.me/lgc2333)
 
 ## 📝 更新日志
 
-还没有
+### 0.1.1
+
+- 添加了配置项 `traitCount`, `attrNumPerLine`, `ignoreScale`
