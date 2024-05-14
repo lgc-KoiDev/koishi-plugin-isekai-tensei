@@ -1,0 +1,493 @@
+{
+  "version": 1,
+  "fonts": [{ "name": "FZKATJW", "path": "fonts/FZKATJW.ttf" }],
+  "species": [
+    {
+      "name": "魔物",
+      "imagePath": "种族/魔物.png",
+      "description": "身为一只魔物，你以吸取生命精华维生，最的方法通常是杀死一个人。",
+      "points": 20,
+      "reverseSituationPoint": true
+    },
+    {
+      "name": "亚人",
+      "imagePath": "种族/亚人.png",
+      "description": "亚人的种类很多，共同点是寿命都不长，且会受到来自人类的歧视。",
+      "points": 10
+    },
+    {
+      "name": "人类",
+      "imagePath": "种族/人类.png",
+      "description": "你是一名普通的人类青年，享有基本的人权和纳税的义务。",
+      "points": 0
+    },
+    {
+      "name": "精灵",
+      "imagePath": "种族/精灵.png",
+      "description": "精灵的平均寿命长达数百年，且在普通人眼是值得敬仰的存在。",
+      "points": -25
+    },
+    {
+      "name": "神裔",
+      "imagePath": "种族/神裔.png",
+      "description": "神裔每隔百年只会出现一人，寿命比精灵更长，他们被视为神的代言人，世界的救赎者。",
+      "points": -50
+    }
+  ],
+  "genders": [
+    {
+      "name": "无性",
+      "imagePath": "性别/无性.png",
+      "description": "看来你穿越的时候有个很重要的东西忘记带了。",
+      "points": 10
+    },
+    {
+      "name": "维持现状",
+      "imagePath": "性别/维持现状.png",
+      "description": "我这辈子的性别挺好，下辈子还想接着这么过。",
+      "points": 0
+    },
+    {
+      "name": "性转走起",
+      "imagePath": "性别/性转走起.png",
+      "description": "这么好的机会不试试另一种人生怎么说得过去！",
+      "points": -5
+    },
+    {
+      "name": "双性人",
+      "imagePath": "性别/双性人.png",
+      "description": "小孩子才做选择题，我全都要！",
+      "points": 0
+    },
+    {
+      "name": "乱马",
+      "imagePath": "性别/乱马.png",
+      "description": "你可以随意切换自己的性别，外貌也会随之变化。",
+      "points": 0
+    }
+  ],
+  "worldSituations": [
+    {
+      "name": "炼狱",
+      "imagePath": "世界局势/炼狱.png",
+      "description": "人类文明途扑朔渺茫，天下苍生岌岌可危。",
+      "points": 20
+    },
+    {
+      "name": "严酷",
+      "imagePath": "世界局势/严酷.png",
+      "description": "魔物四处横行，战乱永无上境，匪盗不计其数。",
+      "points": 10
+    },
+    {
+      "name": "普通",
+      "imagePath": "世界局势/普通.png",
+      "description": "魔族与人族势均力敌，彼此制衡，摩擦不断。",
+      "points": 0
+    },
+    {
+      "name": "桃园",
+      "imagePath": "世界局势/桃园.png",
+      "description": "人族基本统治世界，偶有弱小魔物出没作乱。",
+      "points": -25
+    },
+    {
+      "name": "理想乡",
+      "imagePath": "世界局势/理想乡.png",
+      "description": "和平持续千年，百姓安居乐业，彼此没有偏见。",
+      "points": -50
+    }
+  ],
+  "initialStatuses": [
+    {
+      "name": "荒野求生",
+      "imagePath": "开局状态/荒野求生.png",
+      "description": "你赤身裸体地出现在一片险象丛生，恶兽穿行的密林中。",
+      "points": 10
+    },
+    {
+      "name": "Hey, You!",
+      "imagePath": "开局状态/HeyYou.png",
+      "description": "You're finally awake.",
+      "points": 5
+    },
+    {
+      "name": "新的开始",
+      "imagePath": "开局状态/新的开始.png",
+      "description": "你出现在一座人类城镇的近郊，身上有最基本的冒险者装备和一些钱。",
+      "points": 0
+    },
+    {
+      "name": "召唤仪式",
+      "imagePath": "开局状态/召唤仪式.png",
+      "description": "哦哦！勇者啊！你终于出现了！拯救世界的任务就交给你了！",
+      "points": -5
+    },
+    {
+      "name": "英雄驾到",
+      "imagePath": "开局状态/英雄驾到.png",
+      "description": "公主乘坐的马车被魔兽袭击，千钧一发之际，一道金光从天而降，你从光芒中闪亮登场。",
+      "points": -10
+    }
+  ],
+  "residentStyles": [
+    {
+      "name": "沙耶之歌",
+      "imagePath": "居民风貌/沙耶之歌.png",
+      "description": "这个世界的居民们是一滩又一滩的无形血肉。",
+      "points": 10
+    },
+    {
+      "name": "审美差异",
+      "imagePath": "居民风貌/审美差异.png",
+      "description": "这个世界的大部分人在你眼里长得都非常丑。",
+      "points": 5
+    },
+    {
+      "name": "原汁原味",
+      "imagePath": "居民风貌/原汁原味.png",
+      "description": "城镇里的居民们由大量的人类和少量的矮人，精灵，亚人等组成。",
+      "points": 0
+    },
+    {
+      "name": "福瑞满堂",
+      "imagePath": "居民风貌/福瑞满堂.png",
+      "description": "这个世界的人们身上都覆盖着浓密蓬松的皮毛，长着动物的样貌。",
+      "points": -5
+    },
+    {
+      "name": "萌化补丁",
+      "imagePath": "居民风貌/萌化补丁.png",
+      "description": "这个世界的人们长得都很二次元，可爱的兽耳娘和精灵随处可见。",
+      "points": -10
+    }
+  ],
+  "basicAbilities": {
+    "power": [
+      {
+        "name": "虚弱无力",
+        "imagePath": "基础能力/力量/虚弱无力.png",
+        "description": "你连挥动锄头的力气都没有。",
+        "points": 10
+      },
+      {
+        "name": "普通",
+        "imagePath": "基础能力/力量/普通.png",
+        "description": "你拥有正常年轻人的臂力。",
+        "points": 0
+      },
+      {
+        "name": "力大无比",
+        "imagePath": "基础能力/力量/力大无比.png",
+        "description": "你可以在拔河比赛中一个人战胜五个人。",
+        "points": -25
+      },
+      {
+        "name": "降龙伏虎",
+        "imagePath": "基础能力/力量/降龙伏虎.png",
+        "description": "你能将一只石像鬼一拳打进墙里，抠都抠不出来。",
+        "points": -50
+      }
+    ],
+    "magic": [
+      {
+        "name": "麻瓜",
+        "imagePath": "基础能力/魔力/麻瓜.png",
+        "description": "你没有生成魔力的能力，终生无法使用任何魔法。",
+        "points": 10
+      },
+      {
+        "name": "普通",
+        "imagePath": "基础能力/魔力/普通.png",
+        "description": "你的魔力大概够让你每天能释放三次小火球术。",
+        "points": 0
+      },
+      {
+        "name": "大魔导师",
+        "imagePath": "基础能力/魔力/大魔导师.png",
+        "description": "你的魔力足以支撑你释放大规模的强力法术。",
+        "points": -25
+      },
+      {
+        "name": "呼风唤雨",
+        "imagePath": "基础能力/魔力/呼风唤雨.png",
+        "description": "你能让一座城市化为火海。",
+        "points": -50
+      }
+    ],
+    "intelligence": [
+      {
+        "name": "呆若木鸡",
+        "imagePath": "基础能力/智力/呆若木鸡.png",
+        "description": "你会被骗子用同样的方法骗十次。",
+        "points": 10
+      },
+      {
+        "name": "普通",
+        "imagePath": "基础能力/智力/普通.png",
+        "description": "你玩解谜游戏不需要查攻略。",
+        "points": 0
+      },
+      {
+        "name": "神机妙算",
+        "imagePath": "基础能力/智力/神机妙算.png",
+        "description": "你能独自破解上古遗迹的谜题。",
+        "points": -25
+      },
+      {
+        "name": "人形AI",
+        "imagePath": "基础能力/智力/人形AI.png",
+        "description": "你能通过别人胡子上的面包屑推理出他昨晚手冲了几次。",
+        "points": -50
+      }
+    ],
+    "physique": [
+      {
+        "name": "弱不禁风",
+        "imagePath": "基础能力/体质/弱不禁风.png",
+        "description": "一场感冒能让你在床上躺一个月。",
+        "points": 10
+      },
+      {
+        "name": "普通",
+        "imagePath": "基础能力/体质/普通.png",
+        "description": "你通常来说挺键康的，不过中了毒气陷阱就会死。",
+        "points": 0
+      },
+      {
+        "name": "身强体壮",
+        "imagePath": "基础能力/体质/身强体壮.png",
+        "description": "你可以光着身子在雪山里站六个小时。",
+        "points": -25
+      },
+      {
+        "name": "五毒不侵",
+        "imagePath": "基础能力/体质/五毒不侵.png",
+        "description": "死灵法师对你施展了地狱瘟毒风暴，成功导致你拉肚子。",
+        "points": -50
+      }
+    ],
+    "charm": [
+      {
+        "name": "惨不忍睹",
+        "imagePath": "基础能力/魅力/惨不忍睹.png",
+        "description": "见过你一眼的人，当晚一定会做噩梦。",
+        "points": 10
+      },
+      {
+        "name": "普通",
+        "imagePath": "基础能力/魅力/普通.png",
+        "description": "你看上去如此平凡，以至于很难在人群中找出你。",
+        "points": 0
+      },
+      {
+        "name": "惊世骇俗",
+        "imagePath": "基础能力/魅力/惊世骇俗.png",
+        "description": "见过你的所有人都无条件地对你抱有好感。",
+        "points": -25
+      },
+      {
+        "name": "倾国倾城",
+        "imagePath": "基础能力/魅力/倾国倾城.png",
+        "description": "人们聚集在你的身边，心甘情愿地为你做任何事。",
+        "points": -50
+      }
+    ],
+    "luck": [
+      {
+        "name": "天谴之人",
+        "imagePath": "基础能力/运气/天谴之人.png",
+        "description": "一支军队走过去都没事的桥，你走上去后就塌了。",
+        "points": 10
+      },
+      {
+        "name": "普通",
+        "imagePath": "基础能力/运气/普通.png",
+        "description": "你转生前玩抽卡游戏经常吃井。",
+        "points": 0
+      },
+      {
+        "name": "洪福齐天",
+        "imagePath": "基础能力/运气/洪福齐天.png",
+        "description": "城镇中的所有赌场全部禁上你入内。",
+        "points": -25
+      },
+      {
+        "name": "诸神眷顾",
+        "imagePath": "基础能力/运气/诸神眷顾.png",
+        "description": "你在雨中站了半小时，没有一滴雨淋到你。",
+        "points": -50
+      }
+    ]
+  },
+  "traits": [
+    {
+      "name": "全民公敌",
+      "imagePath": "特质/全民公敌.png",
+      "description": "你因不可抗力惹怒了全世界几乎所有人，每一个人都巴不得你去死。",
+      "points": 10
+    },
+    {
+      "name": "死对头",
+      "imagePath": "特质/死对头.png",
+      "description": "你有一名对你恨之入骨的死敌，他实力不俗，并会倾尽一生的努力尝试杀死你。",
+      "points": 5
+    },
+    {
+      "name": "好哥哥",
+      "imagePath": "特质/好哥哥.png",
+      "description": "你有一位武艺高强的大哥，不管发生什么他都会罩你，但他不一定一直待在你身边。",
+      "points": -5
+    },
+    {
+      "name": "导航妖精",
+      "imagePath": "特质/导航妖精.png",
+      "description": "你得到一只可爱的小妖精，她战斗力很弱，但能回答你的各种问题。（并非无所不知）",
+      "points": -10
+    },
+    {
+      "name": "无声世界",
+      "imagePath": "特质/无声世界.png",
+      "description": "这个世界的人们使用心灵感应来交流，你终生都无法与他们对话。",
+      "points": 10
+    },
+    {
+      "name": "语言不通",
+      "imagePath": "特质/语言不通.png",
+      "description": "你完全看不懂异世界的文字，也听不懂异世界的语言，只能从头学起。",
+      "points": 5
+    },
+    {
+      "name": "动物伙伴",
+      "imagePath": "特质/动物伙伴.png",
+      "description": "你可以听懂动物讲话。",
+      "points": -5
+    },
+    {
+      "name": "鉴定能力",
+      "imagePath": "特质/鉴定能力.png",
+      "description": "你可以让任何对象的上方浮现出一个只有你能看到的面板，上面会写着该对象的详细信息",
+      "points": -10
+    },
+    {
+      "name": "诅咒缠身",
+      "imagePath": "特质/诅咒缠身.png",
+      "description": "你被最恶毒的恶意所诅咒，身体会慢慢地变得越来越虚弱，解除诅咒需要花费巨大的劳力和漫长的时间。",
+      "points": 10
+    },
+    {
+      "name": "不详体征",
+      "imagePath": "特质/不详体征.png",
+      "description": "你的身体某处长着上去十分不详的东西，这会导致其他人对你敬而远之。",
+      "points": 5
+    },
+    {
+      "name": "生命+1",
+      "imagePath": "特质/生命+1.png",
+      "description": "你获得一生只有一次的，死于意外后得到复活的机会。",
+      "points": -5
+    },
+    {
+      "name": "重生祭坛",
+      "imagePath": "特质/重生祭坛.png",
+      "description": "你因意外而死亡后会在一座远古祭坛上重生，每次重生相隔不能短于一年。",
+      "points": -10
+    },
+    {
+      "name": "倒计时",
+      "imagePath": "特质/倒计时.png",
+      "description": "某个极为强大的邪恶力量正试图毁灭世界，如果你不加以阻止，整个世界将迎来终结。",
+      "points": 10
+    },
+    {
+      "name": "烦人的神",
+      "imagePath": "特质/烦人的神.png",
+      "description": "让你转生到这个世界的神会时不时给你发布一些非常麻烦的支线任务。",
+      "points": 5
+    },
+    {
+      "name": "天铸神兵",
+      "imagePath": "特质/天铸神兵.png",
+      "description": "你将获得一把世界上最锋利，最坚固的兵器。（造型任选）",
+      "points": -5
+    },
+    {
+      "name": "发光石板",
+      "imagePath": "特质/发光石板.png",
+      "description": "你获得一台电量无限，且可以连接现实世界互联网的智能手机。",
+      "points": -10
+    },
+    {
+      "name": "奴隶烙印",
+      "imagePath": "特质/奴隶烙印.png",
+      "description": "你身上有一个无法解除的奴隶烙印，并且有一个必须无条件服从其命令的主人，你无法主动伤害主人。",
+      "points": 10
+    },
+    {
+      "name": "恐怖梦魇",
+      "imagePath": "特质/恐怖梦魇.png",
+      "description": "你一旦入睡就会反复做一个恐怖的噩梦，这会导致你精神憔悴，这个现象事出有因，但解决起来十分困难。",
+      "points": 5
+    },
+    {
+      "name": "轻锐小队",
+      "imagePath": "特质/轻锐小队.png",
+      "description": "你拥有三名志同道合，愿与你同甘共苦共患难的秋伴，但他们一开始战斗力很弱，很容易死掉。",
+      "points": -5
+    },
+    {
+      "name": "不渝之人",
+      "imagePath": "特质/不渝之人.png",
+      "description": "你拥有一位对你死心塌地的爱人，TA的战斗力一般。（性别和种族可任选）",
+      "points": -10
+    },
+    {
+      "name": "扫把星",
+      "imagePath": "特质/扫把星.png",
+      "description": "你的存在会招来灾厄，一旦你在某处定居下来，这个地方会频繁地被魔物攻击，或发生不幸的事故。",
+      "points": 10
+    },
+    {
+      "name": "重责在肩",
+      "imagePath": "特质/重责在肩.png",
+      "description": "你有一个责任重大的职位，虽然工资还行，但每天都要四处奔波。擅自渎职会导致你被执政者们敌视。",
+      "points": 5
+    },
+    {
+      "name": "隐身能力",
+      "imagePath": "特质/隐身能力.png",
+      "description": "你每天可以完全消去自己的身形一次，持续时间五分钟。",
+      "points": -5
+    },
+    {
+      "name": "庇护所",
+      "imagePath": "特质/庇护所.png",
+      "description": "你拥有一个只有你自己以及你邀请的人才能进入的秘密基地，这里位于异空间，不受现世干涉。",
+      "points": -10
+    },
+    {
+      "name": "中二晚期",
+      "imagePath": "特质/中二晚期.png",
+      "description": "你施展任何战技或魔法前都必须先大声地喊出技能名，并摆出一个炫酷的姿势才能成功。",
+      "points": 10
+    },
+    {
+      "name": "魔素不耐",
+      "imagePath": "特质/魔素不耐.png",
+      "description": "治疗和强化等正面魔法对你产生的效果都非常弱。",
+      "points": 5
+    },
+    {
+      "name": "魔素亲和",
+      "imagePath": "特质/魔素亲和.png",
+      "description": "治疗和强化等正面魔法对你产生的效果都非常好。",
+      "points": -5
+    },
+    {
+      "name": "自愈体质",
+      "imagePath": "特质/自愈体质.png",
+      "description": "你受伤之后，伤口会以肉眼可见的速度自动恢复，但受到太重的伤时还是可能会死。而且还是会很痛。",
+      "points": -10
+    }
+  ]
+}

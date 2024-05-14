@@ -1,0 +1,7 @@
+commands:
+  isekai-tensei:
+    description: 随机异世界重开设定
+    options:
+      seed: 指定固定随机种子。
+    messages:
+      missing-resource: 发现资源文件缺失！请重启插件检查。
