@@ -7,6 +7,7 @@ import { Context, HTTP } from 'koishi'
 import seedRandom from 'seedrandom'
 import Semaphore from 'semaphore-promise'
 
+import { Config } from './config'
 import { name } from './const'
 
 export interface AttributeItem {
@@ -95,14 +96,16 @@ const MANIFEST_JSON_NAME = 'manifest.json'
 export class DataSource {
   public readonly dataPath: string
 
+  protected http: HTTP
+
   constructor(
     protected ctx: Context,
-    protected http: HTTP,
+    protected config: Config,
   ) {
+    this.http = ctx.http.extend(config.requestConfig)
     this.dataPath = isDev()
       ? path.join(__dirname, '..', 'res')
       : path.join(process.cwd(), 'cache', name)
-    // this.ctx.logger.debug('Data path:', this.dataPath)
   }
 
   get manifestPath() {
@@ -151,7 +154,7 @@ export class DataSource {
         this.checkMissingResources()
           .then((ls) => this.ctx.logger.warn(`\n${ls.join('\n')}`))
           .catch((e) => {
-            this.ctx.logger.warn('Possibility manifest JSON missing')
+            this.ctx.logger.warn('Possibly manifest JSON missing')
             this.ctx.logger.warn(e)
           })
         throw new Error('Missing resource in develop mode')
@@ -169,14 +172,14 @@ export class DataSource {
       if (newManifest.version === undefined) throw new Error('Invalid manifest')
     } catch (e) {
       this.ctx.logger.warn(
-        'Failed to fetch manifest, checking local manifest and resource usability',
+        `Failed to fetch manifest, checking local resource usability\n${e}`,
       )
-      this.ctx.logger.warn(e)
+      // this.ctx.logger.warn(e)
       if (await this.check()) {
-        this.ctx.logger.info('Local manifest is usable')
+        this.ctx.logger.info('Local resource is usable, will skip update')
         return
       }
-      throw new Error('Cannot init manifest')
+      throw e
     }
 
     const oldVersion = existsSync(this.manifestPath)
@@ -261,8 +264,12 @@ export class DataSource {
     const rng = seedRandom(`${seed}`)
     const rollItem = <T>(items: T[]): T =>
       items[Math.floor(rng() * items.length)]
+    const rollRange = (min: number, max: number): number => {
+      min = Math.ceil(min)
+      max = Math.floor(max)
+      return Math.floor(rng() * (max - min + 1)) + min
+    }
 
-    const traitCount = 4
     const [specie, gender, worldSituation, initialStatus, residentStyle] = (
       Object.values(
         pick(manifest, [
@@ -278,13 +285,26 @@ export class DataSource {
       Object.entries(manifest.basicAbilities).map(([k, v]) => [k, rollItem(v)]),
     ) as CharacterBasicAbilitiesSelection
 
+    const traitCount = (() => {
+      const x = rollRange(...this.config.traitCount)
+      const maxLen = manifest.traits.length
+      if (x > maxLen) {
+        this.ctx.logger.warn(
+          `Rolled trait count is bigger than total traits count (${maxLen})! ` +
+            `Check your configuration!!!`,
+        )
+        return maxLen
+      }
+      return x
+    })()
     const traits: AttributeItem[] = []
-    for (; traits.length <= traitCount; ) {
+    for (; traits.length < traitCount; ) {
       const trait = rollItem(manifest.traits)
       if (!traits.some((it) => it.name === trait.name)) {
         traits.push(trait)
       }
     }
+    traits.sort(({ points: a }, { points: b }) => b - a)
 
     if ((specie as SpecieAttributeItem).reverseSituationPoint) {
       worldSituation.points = -worldSituation.points

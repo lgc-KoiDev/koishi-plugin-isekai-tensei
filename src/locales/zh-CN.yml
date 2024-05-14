@@ -5,3 +5,10 @@ commands:
       seed: 指定固定随机种子。
     messages:
       missing-resource: 发现资源文件缺失！请重启插件检查。
+
+_config:
+  - $desc: 生成设置
+    traitCount: 特质数量范围。
+  - $desc: 图片设置
+    attrNumPerLine: 每行最大的项目数。
+    ignoreScale: 是否不要根据 `puppeteer` 插件配置中的 `deviceScaleFactor` 配置调整图片比例。

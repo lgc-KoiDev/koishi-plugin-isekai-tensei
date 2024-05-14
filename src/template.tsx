@@ -2,8 +2,9 @@ import path from 'node:path'
 import { pathToFileURL } from 'node:url'
 
 import { pick } from 'cosmokit'
-import { h } from 'koishi'
+import { Context, h } from 'koishi'
 
+import { Config } from './config'
 import { name } from './const'
 import { AttributeItem, CharacterAttributesSelection, DataSource } from './data'
 
@@ -19,11 +20,14 @@ export function formatDate(date?: Date) {
 }
 
 export async function createTemplate(
+  ctx: Context,
+  config: Config,
   source: DataSource,
   data: CharacterAttributesSelection,
-  scaleFactor?: number,
 ): Promise<h.Fragment> {
-  if (!scaleFactor) scaleFactor = 1
+  const scaleFactor = config.ignoreScale
+    ? 1
+    : ctx.puppeteer.config.defaultViewport.deviceScaleFactor ?? 1
 
   const attributeTemplate = async (item: AttributeItem) => (
     <div class="attr-card">
@@ -97,9 +101,9 @@ export async function createTemplate(
   const style = `
   ${fontFaceStyle}
   .flex { display: flex; }
+  .flex-col { flex-direction: column; }
   .items-center { align-items: center; }
   .justify-center { justify-content: center; }
-  .flex-col { flex-direction: column; }
   .font-bold { font-weight: bold; }
   .text-5xl { font-size: ${48 / scaleFactor}px; }
   .text-4xl { font-size: ${36 / scaleFactor}px; }
@@ -121,9 +125,10 @@ export async function createTemplate(
     font-family: ${fontFaces}, sans-serif;
   }
   .attr-line {
-    display: flex;
+    display: grid;
     gap: ${16 / scaleFactor}px;
     align-items: flex-start;
+    grid-template-columns: repeat(${config.attrNumPerLine}, minmax(0, 1fr));
   }
   .attr-card {
     width: ${104 / scaleFactor}px;
