@@ -57,13 +57,13 @@
       "name": "双性人",
       "imagePath": "性别/双性人.png",
       "description": "小孩子才做选择题，我全都要！",
-      "points": 0
+      "points": -15
     },
     {
       "name": "乱马",
       "imagePath": "性别/乱马.png",
       "description": "你可以随意切换自己的性别，外貌也会随之变化。",
-      "points": 0
+      "points": -30
     }
   ],
   "worldSituations": [
