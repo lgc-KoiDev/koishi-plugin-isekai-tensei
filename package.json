@@ -45,7 +45,7 @@
     "semaphore-promise": "^1.4.2"
   },
   "devDependencies": {
-    "@satorijs/element": "^3.1.7",
+    "@cordisjs/element": "^0.1.0",
     "@types/seedrandom": "^3"
   }
 }
