@@ -53,7 +53,7 @@ export async function createTemplate(
           'worldSituation',
           'initialStatus',
           'residentStyle',
-        ]),
+        ]) as any as Record<string, AttributeItem>,
       ).map(attributeTemplate),
     ),
     Promise.all(Object.values(data.basicAbilities).map(attributeTemplate)),

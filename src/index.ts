@@ -22,11 +22,9 @@ export async function apply(ctx: Context, config: Config) {
   config.traitCount.sort((a, b) => a - b)
   let scaleFactor = 1
   if (!config.ignoreScale) {
-    ctx.inject(
-      ['puppeteer'],
-      (ctx) =>
-        (scaleFactor = ctx.puppeteer.config.defaultViewport.deviceScaleFactor),
-    )
+    ctx.inject(['puppeteer'], (ctx) => {
+      scaleFactor = ctx.puppeteer.config.defaultViewport!.deviceScaleFactor!
+    })
   }
 
   const dataSource = new DataSource(ctx, config)
@@ -48,6 +46,7 @@ export async function apply(ctx: Context, config: Config) {
     .command(name)
     .option('seed', '-s [seed:number]')
     .action(async ({ options, session }) => {
+      if (!session || !options) return
       if (!(await dataSource.check())) return session.text('.missing-resource')
       return await createTemplate(
         config,
