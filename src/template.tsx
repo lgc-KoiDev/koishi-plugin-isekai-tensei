@@ -2,10 +2,10 @@ import path from 'node:path'
 import { pathToFileURL } from 'node:url'
 
 import { pick } from 'cosmokit'
-import { Context, h } from 'koishi'
+import { h, Session } from 'koishi'
 
 import { Config } from './config'
-import { name } from './const'
+import { name, version } from './const'
 import { AttributeItem, CharacterAttributesSelection, DataSource } from './data'
 
 export function formatDate(date?: Date) {
@@ -20,15 +20,12 @@ export function formatDate(date?: Date) {
 }
 
 export async function createTemplate(
-  ctx: Context,
   config: Config,
   source: DataSource,
+  session: Session,
   data: CharacterAttributesSelection,
+  scaleFactor: number,
 ): Promise<h.Fragment> {
-  const scaleFactor = config.ignoreScale
-    ? 1
-    : ctx.puppeteer.config.defaultViewport.deviceScaleFactor ?? 1
-
   const attributeTemplate = async (item: AttributeItem) => (
     <div class="attr-card">
       <img class="card-img" src={await source.readAsDataUrl(item.imagePath)} />
@@ -62,6 +59,7 @@ export async function createTemplate(
     Promise.all(Object.values(data.basicAbilities).map(attributeTemplate)),
     Promise.all(data.traits.map(attributeTemplate)),
   ])
+  const { username, userId } = session
   const body = (
     <main>
       <div class="flex flex-col items-center justify-center">
@@ -69,10 +67,13 @@ export async function createTemplate(
         <div class="text-xl">
           难度评分 {data.totalPoints} | 种子 {data.seed}
         </div>
+        <div class="text-xl">
+          {`${username}${username === userId ? '' : ` (${userId})`}`}
+        </div>
       </div>
       <div>
         <span class="font-bold text-4xl">世界设定</span>
-        <span class="font-bold text-xl">（种族/性别/局势/审美/开局）</span>
+        <span class="font-bold text-xl">（种族/性别/局势/开局/审美）</span>
       </div>
       <div class="attr-line">{world}</div>
       <div>
@@ -85,7 +86,7 @@ export async function createTemplate(
       </div>
       <div class="attr-line">{traits}</div>
       <div class="text-center text-base text-gray">
-        koishi-plugin-{name} | {formatDate()}
+        koishi-plugin-{name} v{version} | {formatDate()}
       </div>
     </main>
   )

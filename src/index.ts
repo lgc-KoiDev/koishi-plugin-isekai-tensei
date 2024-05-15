@@ -9,7 +9,7 @@ import I18nZhCN from './locales/zh-CN.yml'
 import { createTemplate } from './template'
 
 export { Config, name }
-export const inject = ['http', 'notifier', 'puppeteer']
+export const inject = ['http', 'notifier', 'component:html']
 
 export const usage = `
 素材来源：**<a href="https://nga.178.com/read.php?tid=29606608" target="_blank">NGA（点击跳转）</a>**
@@ -18,7 +18,16 @@ export const usage = `
 export async function apply(ctx: Context, config: Config) {
   ctx.i18n.define('zh-CN', I18nZhCN)
   ctx.i18n.define('zh', I18nZhCN)
+
   config.traitCount.sort((a, b) => a - b)
+  let scaleFactor = 1
+  if (!config.ignoreScale) {
+    ctx.inject(
+      ['puppeteer'],
+      (ctx) =>
+        (scaleFactor = ctx.puppeteer.config.defaultViewport.deviceScaleFactor),
+    )
+  }
 
   const dataSource = new DataSource(ctx, config)
 
@@ -41,10 +50,11 @@ export async function apply(ctx: Context, config: Config) {
     .action(async ({ options, session }) => {
       if (!(await dataSource.check())) return session.text('.missing-resource')
       return await createTemplate(
-        ctx,
         config,
         dataSource,
+        session,
         await dataSource.roll(options.seed),
+        scaleFactor,
       )
     })
 }
