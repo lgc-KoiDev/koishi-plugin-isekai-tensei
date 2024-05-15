@@ -52,11 +52,11 @@ Telegram：[@lgc2333](https://t.me/lgc2333)
 
 ## 📝 更新日志
 
-### 0.1.3
+### 0.1.4
 
 - 补全 `package.json`
 
-### 0.1.2
+### 0.1.2 & 0.1.3
 
 - 修复了一处文本错误，在图片中加入用户昵称与 ID ([#1](https://github.com/lgc2333/koishi-plugin-isekai-tensei/issues/1))
 - 不再强依赖 `puppeteer`，改为依赖 `component:html`
