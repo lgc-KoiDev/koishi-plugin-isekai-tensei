@@ -37,6 +37,7 @@
     ]
   },
   "peerDependencies": {
+    "@cordisjs/element": "^0.1.0",
     "@cordisjs/plugin-http": "^0.4.2",
     "@koishijs/plugin-notifier": "^1.2.0",
     "cosmokit": "^1.6.2",
@@ -47,7 +48,6 @@
     "semaphore-promise": "^1.4.2"
   },
   "devDependencies": {
-    "@cordisjs/element": "^0.1.0",
     "@types/seedrandom": "^3",
     "koishi-plugin-puppeteer": "^3.8.4"
   }
