@@ -136,7 +136,7 @@ export class DataSource {
           ...Object.values(manifest.basicAbilities),
         ] as AttributeItem[][]
       )
-        .flatMap((v) => v)
+        .flat()
         .map((it) => it.imagePath),
       ...manifest.fonts.map((it) => it.path),
     ]
