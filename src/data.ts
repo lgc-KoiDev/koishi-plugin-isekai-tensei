@@ -205,10 +205,7 @@ export class DataSource {
     this.ctx.logger.success('Successfully downloaded resources')
   }
 
-  protected async downloadResources(
-    paths: string[],
-    notify?: (msg: string) => any,
-  ) {
+  protected async downloadResources(paths: string[], notify?: (msg: string) => any) {
     const singleTask = async (filePath: string) => {
       // retry 3 times
       const retryTimes = 3
@@ -223,9 +220,7 @@ export class DataSource {
           await writeFile(realPath, Buffer.from(data))
           return
         } catch (e) {
-          this.ctx.logger.debug(
-            `Fetch ${filePath} failed, tried ${i} / ${retryTimes}`,
-          )
+          this.ctx.logger.debug(`Fetch ${filePath} failed, tried ${i} / ${retryTimes}`)
           this.ctx.logger.debug(e)
           if (i >= retryTimes) throw e
         }
@@ -262,8 +257,7 @@ export class DataSource {
       seed = crypto.getRandomValues(new Uint32Array(1))[0]
     }
     const rng = seedRandom(`${seed}`)
-    const rollItem = <T>(items: T[]): T =>
-      items[Math.floor(rng() * items.length)]
+    const rollItem = <T>(items: T[]): T => items[Math.floor(rng() * items.length)]
     const rollRange = (min: number, max: number): number => {
       min = Math.ceil(min)
       max = Math.floor(max)

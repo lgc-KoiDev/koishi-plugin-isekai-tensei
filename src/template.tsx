@@ -30,9 +30,7 @@ export async function createTemplate(
     <div class="attr-card">
       <img class="card-img" src={await source.readAsDataUrl(item.imagePath)} />
       <div class="font-bold text-xl">{item.name}</div>
-      <div
-        class={`font-bold text-base text-${item.points > 0 ? 'green' : 'red'}`}
-      >
+      <div class={`font-bold text-base text-${item.points > 0 ? 'green' : 'red'}`}>
         {item.points ? (
           `(${item.points > 0 ? '+' : ''}${item.points})`
         ) : (
