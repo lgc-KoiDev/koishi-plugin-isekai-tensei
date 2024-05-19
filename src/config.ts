@@ -27,7 +27,7 @@ export const Config: Schema<Config> = Schema.intersect([
   }),
   Schema.object({
     requestConfig: HTTP.createConfig(
-      'https://raw.gitmirror.com/lgc2333/koishi-plugin-isekai-tensei/master/res/',
+      'https://raw.gitmirror.com/lgc-KoiDev/koishi-plugin-isekai-tensei/master/res/',
     ),
   }),
 ])

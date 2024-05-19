@@ -3,11 +3,11 @@
 <div align="center">
 
 <a href="https://koishi.chat/zh-CN/market/">
-  <img src="https://raw.githubusercontent.com/lgc2333/koishi-workspace/master/readme/koishi-plugin.png" width="180" height="180" alt="NoneBotPluginLogo">
+  <img src="https://raw.githubusercontent.com/lgc-KoiDev/readme/master/workspace/koishi-plugin.png" width="180" height="180" alt="NoneBotPluginLogo">
 </a>
 
 <p>
-  <img src="https://raw.githubusercontent.com/lgc2333/koishi-workspace/master/readme/KoishiPlugin.svg" width="240" alt="NoneBotPluginText">
+  <img src="https://raw.githubusercontent.com/lgc-KoiDev/readme/master/workspace/KoishiPlugin.svg" width="240" alt="NoneBotPluginText">
 </p>
 
 # Koishi-Plugin-ISeKai-TenSei
@@ -15,7 +15,7 @@
 _✨ 随机异世界重开设定 ✨_
 
 <a href="./LICENSE">
-  <img src="https://img.shields.io/github/license/lgc2333/koishi-plugin-isekai-tensei.svg" alt="license">
+  <img src="https://img.shields.io/github/license/lgc-KoiDev/koishi-plugin-isekai-tensei.svg" alt="license">
 </a>
 <a href="https://www.npmjs.com/package/koishi-plugin-isekai-tensei">
   <img src="https://img.shields.io/npm/v/koishi-plugin-isekai-tensei" alt="pypi">
@@ -58,7 +58,7 @@ Telegram：[@lgc2333](https://t.me/lgc2333)
 
 ### 0.1.2 & 0.1.3
 
-- 修复了一处文本错误，在图片中加入用户昵称与 ID ([#1](https://github.com/lgc2333/koishi-plugin-isekai-tensei/issues/1))
+- 修复了一处文本错误，在图片中加入用户昵称与 ID ([#1](https://github.com/lgc-KoiDev/koishi-plugin-isekai-tensei/issues/1))
 - 不再强依赖 `puppeteer`，改为依赖 `component:html`
 
 ### 0.1.1
