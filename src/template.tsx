@@ -6,7 +6,12 @@ import { h, Session } from 'koishi'
 
 import { Config } from './config'
 import { name, version } from './const'
-import { AttributeItem, CharacterAttributesSelection, DataSource } from './data'
+import {
+  AttributeItem,
+  CharacterAttributesSelection,
+  DataSource,
+  FontInfo,
+} from './data'
 
 export function formatDate(date?: Date) {
   if (!date) date = new Date()
@@ -89,10 +94,10 @@ export async function createTemplate(
     </main>
   )
 
-  const fontFaces = manifest.fonts.map((it) => `'${it.family}'`).join(', ')
+  const fontFaces = manifest.fonts.map((it: FontInfo) => `'${it.family}'`).join(', ')
   const fontFaceStyle = manifest.fonts
     .map(
-      (it) =>
+      (it: FontInfo) =>
         `@font-face { font-family: '${it.family}'; ` +
         `src: url(${pathToFileURL(path.join(source.dataPath, it.path)).href}); }`,
     )
