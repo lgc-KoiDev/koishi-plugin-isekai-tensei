@@ -39,9 +39,9 @@
   "peerDependencies": {
     "@cordisjs/element": "^0.1.0",
     "@cordisjs/plugin-http": "^0.4.2",
-    "@koishijs/plugin-notifier": "^1.2.0",
+    "@koishijs/plugin-notifier": "^1.2.1",
     "cosmokit": "^1.6.2",
-    "koishi": "^4.17.6"
+    "koishi": "^4.17.9"
   },
   "dependencies": {
     "seedrandom": "^3.0.5",
