@@ -41,7 +41,7 @@
     "@cordisjs/plugin-http": "^0.4.2",
     "@koishijs/plugin-notifier": "^1.2.1",
     "cosmokit": "^1.6.2",
-    "koishi": "^4.17.10"
+    "koishi": "^4.17.11"
   },
   "dependencies": {
     "seedrandom": "^3.0.5",
