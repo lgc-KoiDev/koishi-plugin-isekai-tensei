@@ -2,8 +2,7 @@ import { existsSync } from 'node:fs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
-import { pick } from 'cosmokit'
-import { Context, HTTP } from 'koishi'
+import { Context, HTTP, pick } from 'koishi'
 import seedRandom from 'seedrandom'
 import Semaphore from 'semaphore-promise'
 

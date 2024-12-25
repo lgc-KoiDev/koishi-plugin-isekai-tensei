@@ -1,8 +1,7 @@
 import path from 'node:path'
 import { pathToFileURL } from 'node:url'
 
-import { pick } from 'cosmokit'
-import { h, Session } from 'koishi'
+import { h, pick, Session } from 'koishi'
 
 import { Config } from './config'
 import { name, version } from './const'

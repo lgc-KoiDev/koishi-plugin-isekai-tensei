@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-isekai-tensei",
   "description": "ISeKai TenSei",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -38,17 +38,15 @@
   },
   "peerDependencies": {
     "@cordisjs/element": "^0.1.0",
-    "@cordisjs/plugin-http": "^0.6.2",
     "@koishijs/plugin-notifier": "^1.2.1",
-    "cosmokit": "^1.6.2",
-    "koishi": "^4.18.0"
+    "koishi": "^4.18.4"
   },
   "dependencies": {
     "seedrandom": "^3.0.5",
     "semaphore-promise": "^1.4.2"
   },
   "devDependencies": {
-    "@types/seedrandom": "^3",
+    "@types/seedrandom": "^3.0.8",
     "koishi-plugin-puppeteer": "^3.9.0"
   }
 }
