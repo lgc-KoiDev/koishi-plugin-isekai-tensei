@@ -1,13 +1,12 @@
+import '@koishijs/plugin-notifier'
 import { Context, HTTP } from 'koishi'
+import 'koishi-plugin-puppeteer'
 
 import { Config } from './config'
 import { name } from './const'
 import { DataSource } from './data'
 import I18nZhCN from './locales/zh-CN.yml'
 import { createTemplate } from './template'
-
-import {} from '@koishijs/plugin-notifier'
-import {} from 'koishi-plugin-puppeteer'
 
 export { Config, name }
 export const inject = ['http', 'notifier', 'component:html']

@@ -1,7 +1,7 @@
 import path from 'node:path'
 import { pathToFileURL } from 'node:url'
 
-import { h, pick, Session } from 'koishi'
+import { Session, h, pick } from 'koishi'
 
 import { Config } from './config'
 import { name, version } from './const'
