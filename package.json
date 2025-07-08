@@ -38,8 +38,8 @@
   },
   "peerDependencies": {
     "@koishijs/plugin-notifier": "^1.2.1",
-    "@satorijs/element": "^3.1.7",
-    "koishi": "^4.18.7"
+    "@satorijs/element": "^3.1.8",
+    "koishi": "^4.18.8"
   },
   "dependencies": {
     "seedrandom": "^3.0.5",
