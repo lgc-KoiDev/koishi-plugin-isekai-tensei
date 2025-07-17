@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-isekai-tensei",
   "description": "ISeKai TenSei",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -38,7 +38,7 @@
   },
   "peerDependencies": {
     "@koishijs/plugin-notifier": "^1.2.1",
-    "@satorijs/element": "^3.1.8",
+    "@satorijs/element": "*",
     "koishi": "^4.18.8"
   },
   "dependencies": {
